@@ -9,8 +9,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let color of colors">
+        <tr (click)="setSelectedColor(color)" routerLink = "/cars/color/{{color.name}}" *ngFor="let color of colors" [class]="getCurrentColorClass(color)">
             <td>{{color.name}}</td>
         </tr>
     </tbody>
 </table>
+
+

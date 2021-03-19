@@ -10,6 +10,7 @@ import { ColorService } from 'src/app/services/color.service';
 export class ColorListComponent implements OnInit {
   colors: Color[] = [];
   dataLoaded: boolean = false;
+  currentColor:Color;
 
   constructor(private colorService: ColorService) {}
 
@@ -23,4 +24,16 @@ export class ColorListComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
+
+  setSelectedColor(color:Color){
+    this.currentColor = color;
+  }
+
+  getCurrentColorClass(color:Color){
+    if (color == this.currentColor) {
+      return "table-dark"
+    }
+    return
+  }
+
 }

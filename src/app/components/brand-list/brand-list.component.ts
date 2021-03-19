@@ -10,6 +10,8 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandListComponent implements OnInit {
   brands: Brand[] = [];
   dataLoaded: boolean = false;
+  currentBrand:Brand;
+
 
   constructor(private brandService: BrandService) {}
 
@@ -21,4 +23,18 @@ export class BrandListComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
+
+  setSelectedBrand(brand:Brand){
+    this.currentBrand = brand;
+  }
+
+  getCurrentBrandClass(brand:Brand){
+    if (brand == this.currentBrand) {
+      return "table-dark"
+    }
+    return
+  }
+
+
+
 }

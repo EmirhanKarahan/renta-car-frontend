@@ -1,4 +1,5 @@
-export interface ResponseModel{
-    success:boolean,
-    message:string
+import { ResponseModelBase } from "./responseModelBase";
+
+export interface ResponseModel<T> extends ResponseModelBase{
+    data:T;
 }

@@ -12,6 +12,7 @@ import { RentalListComponent } from './components/rental-list/rental-list.compon
 import { NaviComponent } from './components/navi/navi.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CarDetailsComponent } from './components/car-details/car-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     RentalListComponent,
     NaviComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    CarDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let brand of brands">
+        <tr (click)="setSelectedBrand(brand)" routerLink = "/cars/brand/{{brand.name}}" *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)">
             <td>{{brand.name}}</td>
         </tr>
     </tbody>
