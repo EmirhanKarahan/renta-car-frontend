@@ -7,9 +7,10 @@
         <tr>
             <th>Markalar</th>
         </tr>
+        <input type="text" [(ngModel)]="filterBrand" id="inputSearchBrand" class="form-control" placeholder="Bir marka aratınız" >
     </thead>
     <tbody>
-        <tr (click)="setSelectedBrand(brand)" routerLink = "/cars/brand/{{brand.name}}" *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)">
+        <tr (click)="setSelectedBrand(brand)" routerLink = "/cars/brand/{{brand.name}}" *ngFor="let brand of brands | filterBrand:filterBrand" [class]="getCurrentBrandClass(brand)">
             <td>{{brand.name}}</td>
         </tr>
     </tbody>

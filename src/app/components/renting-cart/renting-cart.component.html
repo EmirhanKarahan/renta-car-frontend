@@ -1,0 +1,26 @@
+<form [formGroup]="rentalAddForm">
+    <div class="col-md-6">
+        <label for="inputCustomer" class="form-label">Müşteri</label>
+        <select id="inputCustomer" class="form-select" formControlName="customerId">
+          <option *ngFor="let customer of customers" [ngValue]="customer.userId">
+              {{customer.companyName}}</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPickUpDate" class="form-label">Alış Zamanı</label>
+      <input type="date" formControlName="rentDate" class="form-control" id="inputPickUpDate">
+    </div>
+    <div class="col-md-6">
+        <label for="inputReturnDate" class="form-label">Teslim Zamanı</label>
+        <input type="date" formControlName="returnDate" class="form-control" id="inputReturnDate">
+      </div>
+    <div class="col-12">
+      <button (click)="rentCar()" type="submit" class="btn btn-primary my-2">Şimdi Kirala</button>
+    </div>
+
+
+</form>
+
+
+
+

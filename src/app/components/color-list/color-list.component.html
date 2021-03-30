@@ -7,9 +7,10 @@
         <tr>
             <th>Renkler</th>
         </tr>
+        <input type="text" [(ngModel)]="filterColor" id="inputSearchColor" class="form-control" placeholder="Bir renk aratınız" >
     </thead>
     <tbody>
-        <tr (click)="setSelectedColor(color)" routerLink = "/cars/color/{{color.name}}" *ngFor="let color of colors" [class]="getCurrentColorClass(color)">
+        <tr (click)="setSelectedColor(color)" routerLink = "/cars/color/{{color.name}}" *ngFor="let color of colors | filterColor:filterColor" [class]="getCurrentColorClass(color)">
             <td>{{color.name}}</td>
         </tr>
     </tbody>

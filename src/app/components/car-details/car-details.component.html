@@ -26,6 +26,7 @@
             <th>Renk</th>
             <th>Günlük Fiyat</th>
             <th>Detaylar</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -34,6 +35,7 @@
             <td>{{carDetails.colorName}}</td>
             <td>{{carDetails.dailyPrice}}</td>
             <td>{{carDetails.carDetails}}</td>
+            <td><button routerLink="/rent/{{carDetails.id}}" (click)="rentCar(carDetails)" class="btn btn-success btn-lg">Kirala</button></td>
         </tr>
     </tbody>
 </table>

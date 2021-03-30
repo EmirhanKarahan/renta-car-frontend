@@ -1,0 +1,35 @@
+<h2> Son bir adım kaldı.. </h2>
+<div class="col-lg-5">
+
+    <div class="card shadow-sm rounded">
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-lg-9">
+                    <input type="number" class="form-control my-2" placeholder="Kart Numaranız">
+                </div>
+
+                <div class="col-lg-7">
+                    <input type="text" class="form-control my-2" placeholder="Kart Üzerindeki Ad Soyad">
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control my-2" placeholder="Geçerlilik Tarihi">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <input type="number" class="form-control my-2" placeholder="Güvenlik Kodu">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <button (click)="payRent()" type="button" class="btn btn-success fs-5 my-2"><span
+            class="fs-5" ><b>{{totalPrice | currency:"₺"}} </b></span>İçin Ödeme Yapın</button>
+
+</div>
