@@ -1,0 +1,28 @@
+<form [formGroup]="addColorForm">
+    <div class="col-md-6">
+      <label for="inputColorName" class="form-label">Renk Adı</label>
+      <input type="text" formControlName="name" class="form-control" id="inputColorName">
+    </div>
+    <div class="col-12">
+      <button (click)="addColor()" type="submit" class="btn btn-primary my-2">Ekle</button>
+    </div>
+</form>
+
+<hr>
+
+<form [formGroup]="updateColorForm">
+  <div class="col-md-6">
+    <label for="inputUpdateColorId" class="form-label">Mevcut Adı</label>
+    <select id="inputUpdateColorId" class="form-select" formControlName="id">
+        <option *ngFor="let color of colors" [ngValue]="color.id">
+            {{color.name}}</option>
+    </select>
+</div>
+  <div class="col-md-6">
+    <label for="inputUpdateColorName" class="form-label">Yeni Adı</label>
+    <input type="text" formControlName="name" class="form-control" id="inputUpdateColorName">
+  </div>
+  <div class="col-12">
+    <button (click)="updateColor()" type="submit" class="btn btn-primary my-2">Güncelle</button>
+  </div>
+</form>

@@ -21,7 +21,9 @@ import { RentingCartComponent } from './components/renting-cart/renting-cart.com
 
 import {ToastrModule} from "ngx-toastr";
 import { PaymentComponent } from './components/payment/payment.component';
-
+import { ColorOperationsComponent } from './components/color-operations/color-operations.component';
+import { CarOperationsComponent } from './components/car-operations/car-operations.component';
+import { BrandOperationsComponent } from './components/brand-operations/brand-operations.component';
 
 
 @NgModule({
@@ -39,7 +41,10 @@ import { PaymentComponent } from './components/payment/payment.component';
     FilterBrandPipe,
     FilterColorPipe,
     RentingCartComponent,
-    PaymentComponent
+    PaymentComponent,
+    ColorOperationsComponent,
+    CarOperationsComponent,
+    BrandOperationsComponent
   ],
   imports: [
     BrowserModule,

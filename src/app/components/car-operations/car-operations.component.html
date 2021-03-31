@@ -1,0 +1,73 @@
+<form [formGroup]="addCarForm">
+    <div class="col-md-6">
+        <label for="inputBrand" class="form-label">Marka</label>
+        <select id="inputBrand" class="form-select" formControlName="brandId">
+            <option *ngFor="let brand of brands" [ngValue]="brand.id">
+                {{brand.name}}</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="inputColor" class="form-label">Renk</label>
+        <select id="inputColor" class="form-select" formControlName="colorId">
+            <option *ngFor="let color of colors" [ngValue]="color.id">
+                {{color.name}}</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="inputModelYear" class="form-label">Model Yılı</label>
+        <input id="inputModelYear" type="number" class="form-control" formControlName="modelYear">
+    </div>
+    <div class="col-md-6">
+        <label for="inputDailyPrice" class="form-label">Günlük Ücret</label>
+        <input id="inputDailyPrice" type="number" class="form-control" formControlName="dailyPrice">
+    </div>
+    <div class="col-md-12">
+        <label for="inputDescription" class="form-label">Açıklama</label>
+        <input id="inputDescription" type="textarea" class="form-control" formControlName="description">
+    </div>
+    <div class="col-12">
+        <button (click)="addCar()" type="submit" class="btn btn-primary my-2">Ekle</button>
+    </div>
+</form>
+
+<hr>
+
+<form [formGroup]="updateCarForm">
+    <div class="col-md-12">
+        <label for="inputUpdateCar" class="form-label">Güncellenecek Araç</label>
+        <select id="inputUpdateCar" class="form-select" formControlName="id">
+            <option *ngFor="let carDetail of carDetails" [ngValue]="carDetail.id">
+                Markası={{carDetail.brandName}} Renk={{carDetail.colorName}} Günlük Ücret={{carDetail.dailyPrice}} 
+            </option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="inputUpdateBrand" class="form-label">Marka</label>
+        <select id="inputUpdateBrand" class="form-select" formControlName="brandId">
+            <option *ngFor="let brand of brands" [ngValue]="brand.id">
+                {{brand.name}}</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="inputUpdateColor" class="form-label">Renk</label>
+        <select id="inputUpdateColor" class="form-select" formControlName="colorId">
+            <option *ngFor="let color of colors" [ngValue]="color.id">
+                {{color.name}}</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="inputUpdateModelYear" class="form-label">Model Yılı</label>
+        <input id="inputUpdateModelYear" type="number" class="form-control" formControlName="modelYear">
+    </div>
+    <div class="col-md-6">
+        <label for="inputUpdateDailyPrice" class="form-label">Günlük Ücret</label>
+        <input id="inputUpdateDailyPrice" type="number" class="form-control" formControlName="dailyPrice">
+    </div>
+    <div class="col-md-12">
+        <label for="inputUpdateDescription" class="form-label">Açıklama</label>
+        <input id="inputUpdateDescription" type="textarea" class="form-control" formControlName="description">
+    </div>
+    <div class="col-12">
+        <button (click)="updateCar()" type="submit" class="btn btn-primary my-2">Ekle</button>
+    </div>
+</form>

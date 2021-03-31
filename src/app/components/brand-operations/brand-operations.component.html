@@ -1,0 +1,28 @@
+<form [formGroup]="addBrandForm">
+    <div class="col-md-6">
+      <label for="inputAddBrandName" class="form-label">Marka Adı</label>
+      <input type="text" formControlName="name" class="form-control" id="inputAddBrandName">
+    </div>
+    <div class="col-12">
+      <button (click)="addBrand()" type="submit" class="btn btn-primary my-2">Ekle</button>
+    </div>
+</form>
+
+<hr>
+
+<form [formGroup]="updateBrandForm">
+  <div class="col-md-6">
+    <label for="inputUpdateBrandId" class="form-label">Mevcut Adı</label>
+    <select id="inputUpdateBrandId" class="form-select" formControlName="id">
+        <option *ngFor="let brand of brands" [ngValue]="brand.id">
+            {{brand.name}}</option>
+    </select>
+</div>
+  <div class="col-md-6">
+    <label for="inputUpdateBrandName" class="form-label">Yeni Adı</label>
+    <input type="text" formControlName="name" class="form-control" id="inputUpdateBrandName">
+  </div>
+  <div class="col-12">
+    <button (click)="updateBrand()" type="submit" class="btn btn-primary my-2">Güncelle</button>
+  </div>
+</form>
