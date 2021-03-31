@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
 import { BrandOperationsComponent } from './components/brand-operations/brand-operations.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { CarListComponent } from './components/car-list/car-list.component';
@@ -9,6 +10,8 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 import { PaymentComponent } from './components/payment/payment.component';
 import { RentalListComponent } from './components/rental-list/rental-list.component';
 import { RentingCartComponent } from './components/renting-cart/renting-cart.component';
+import { LoginGuard } from './guard/login.guard';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
    {path:"", pathMatch:"full", component:CarListComponent},
@@ -19,8 +22,10 @@ const routes: Routes = [
    {path:"cars/:carId", component:CarDetailsComponent},
    {path:"rent/:carId", component:RentingCartComponent},
    {path:"payment", component:PaymentComponent},
+   {path:"login", component:LoginComponent},
+   {path:"register", component:RegisterComponent},
    {path:"brand-operations", component:BrandOperationsComponent},
-   {path:"car-operations", component:CarOperationsComponent},
+   {path:"car-operations", component:CarOperationsComponent, canActivate:[LoginGuard]},
    {path:"color-operations", component:ColorOperationsComponent},
    {path:"rentals", component:RentalListComponent},
    {path:"customers", component:CustomerListComponent},

@@ -1,0 +1,33 @@
+<div class="container-fluid position-relative">
+    <div class="login-form py-5 px-4 position-absolute top-50 start-50 translate-middle">
+        <fa-icon class="fs-1" [icon]="faCarSide"></fa-icon>
+        <h3 class="login-form-title">Üye ol</h3>
+        <form [formGroup]="registerForm" class="mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ad" formControlName="firstName" class="form-control"
+                            aria-describedby="emailHelp" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" placeholder="Soyad" formControlName="lastName" class="form-control"
+                            aria-describedby="emailHelp" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="email" placeholder="Email" formControlName="email" class="form-control mt-2"
+                    aria-describedby="emailHelp" required />
+            </div>
+            <div class="form-group mt-2">
+                <input type="password" formControlName="password" placeholder="Şifre" class="form-control" required />
+            </div>
+            <button type="submit" (click)="register()" class="form-control btn mt-2 mb-4 btn-primary rounded">
+                Kayıt
+            </button>
+        </form>
+    </div>
+</div>

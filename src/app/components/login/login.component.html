@@ -1,0 +1,18 @@
+<div class="container-fluid position-relative">
+    <div class="login-form py-5 px-4 position-absolute top-50 start-50 translate-middle">
+        <fa-icon class="fs-1" [icon]="faCarSide"></fa-icon>
+        <h3 class="login-form-title">Giriş</h3>
+        <form [formGroup]="loginForm" class="mt-4">
+            <div class="form-group">
+                <input type="email" placeholder="Email"  formControlName="email" class="form-control" aria-describedby="emailHelp"
+                    required />
+            </div>
+            <div class="form-group mt-2">
+                <input type="password" formControlName="password" placeholder="Şifre" class="form-control" required />
+            </div>
+            <button type="submit" (click)="login()" class="form-control btn mt-2 mb-4 btn-primary rounded">
+                Giriş
+            </button>
+        </form>
+    </div>
+</div>

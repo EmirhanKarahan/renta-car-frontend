@@ -24,6 +24,9 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { ColorOperationsComponent } from './components/color-operations/color-operations.component';
 import { CarOperationsComponent } from './components/car-operations/car-operations.component';
 import { BrandOperationsComponent } from './components/brand-operations/brand-operations.component';
+import { LoginComponent } from './components/login/login.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -44,9 +47,12 @@ import { BrandOperationsComponent } from './components/brand-operations/brand-op
     PaymentComponent,
     ColorOperationsComponent,
     CarOperationsComponent,
-    BrandOperationsComponent
+    BrandOperationsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -55,7 +61,8 @@ import { BrandOperationsComponent } from './components/brand-operations/brand-op
     ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
-    })
+    }),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
